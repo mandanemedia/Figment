@@ -7,9 +7,17 @@ The complexity can be adjusted to be O(1) in the best case for checking the qua
 
 The Data points along with their timestamp can be stored in the dictionary as well but have been removed, as it is unnecessary to capture that base on the given requirements. 
 
-## run 
-The log path is `sample.log`, `reader.js` read the logs and print on the screen. The recommended Node Version is 17.
+There is a slight variation between Go and Node solutions. Node prints the qualities for all devices in the end, while in Go whenever detects a new device, print the quality of the previous device.
 
+## run 
+The log path is `sample.log`, `reader.js` read the logs and print on the screen. The recommended Version is 17 for Node and Go.
+
+### Go
+```
+go run main.go
+```
+
+### Node
 ```
 node reader.js
 ```

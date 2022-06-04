@@ -84,7 +84,7 @@ const addDeviceName = (line) => {
 const checkDataPoint = (line, lastDevice) => {
     const data = line.split(' '+lastDevice+' ');
     if(data.length < 2){
-        throw `Please set Device Name in proper format for ${deviceType2}`;
+        throw `Please set data in proper format for ${deviceType2}`;
     }
     if(typeof Number(data[1]) === NaN){
         throw `value for ${lastDevice} is not a number at ${data[0]}`;
