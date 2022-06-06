@@ -122,6 +122,7 @@ func checkThermometerData(line string, name string, refernce float64, thermomete
 	thermometer.SumSquareRoot += math.Pow(value-thermometer.Mean, 2)
 	thermometer.SD = math.Sqrt(thermometer.SumSquareRoot / (float64(thermometer.N) - 1))
 
+	thermometer.Quality = "precise"
 	// if the mean of the readings is within 0.5 degrees of the refernce
 	if thermometer.Mean-0.5 <= refernce && refernce <= thermometer.Mean+0.5 {
 		// thermometer.CheckMeanWithin = true
@@ -130,8 +131,6 @@ func checkThermometerData(line string, name string, refernce float64, thermomete
 		} else if thermometer.SD < 5 {
 			thermometer.Quality = "very precise"
 		}
-	} else {
-		thermometer.Quality = "precise"
 	}
 }
 
